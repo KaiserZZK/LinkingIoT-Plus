@@ -1,0 +1,23 @@
+{
+  "@context": "https://www.w3.org/2022/wot/td/v1.1",
+  "id": "urn:dev:wot:com:BLDG",
+  "title": "BLDG",
+  "type": "brick1:Building",
+  "securityDefinitions": {
+    "basic_sc": {
+      "scheme": "basic",
+      "in": "header"
+    },
+    "nosec_sc": {
+      "scheme": "nosec"
+    }
+  },
+  "security": "nosec_sc",
+  "links": [
+    {
+      "href": "brick_setup",
+      "rel": "belongsTo",
+      "mediaType": "application/td"
+    }
+  ]
+}

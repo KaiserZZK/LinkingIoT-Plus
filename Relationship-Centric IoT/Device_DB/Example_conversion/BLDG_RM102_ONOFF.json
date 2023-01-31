@@ -1,0 +1,23 @@
+{
+  "@context": "https://www.w3.org/2022/wot/td/v1.1",
+  "id": "urn:dev:wot:com:BLDG_RM102_ONOFF",
+  "title": "BLDG_RM102_ONOFF",
+  "type": "brick1:On_Off_Command",
+  "securityDefinitions": {
+    "basic_sc": {
+      "scheme": "basic",
+      "in": "header"
+    },
+    "nosec_sc": {
+      "scheme": "nosec"
+    }
+  },
+  "security": "nosec_sc",
+  "links": [
+    {
+      "href": "brick_setup",
+      "rel": "belongsTo",
+      "mediaType": "application/td"
+    }
+  ]
+}

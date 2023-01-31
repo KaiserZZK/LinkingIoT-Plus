@@ -1,0 +1,63 @@
+[('if user_away.state = 1 then user_away_mode.state = 1', 'safety'),  
+('if user_away_mode.state = 1 then motion.state = 1', 'safety'), 	
+('if user_away_mode.state = 1 then camera.state = 1', 'safety'), 	
+('if user_away_mode.state = 1 then door.state = 0', 'safety'),   Y   relation? doors connecting outside apartment door       in one home  or one user or sensor on door  or sensor feed to door     directly related
+
+##
+device1  --- device2 --- device3
+relationship1(device1 / device2)  --- rule 1  relationship2(device2 / device3) --- rule 1 
+##
+
+('if user_away_mode.state = 1 then windows.state = 0', 'safety'),	Y  relation?  
+ 
+('if temp.value >= 60 and outside.value <= 60 then windows.state = 1', 'energy'),   ## temp > 30   heater == 0,  temp < 10   heater == 1
+('if motion.state = 1 and user.home = 0 then text.state = 1', 'safety'), 
+
+('if user.home = 0 then light.state = 0', 'energy'),  Y   ## custom
+('if user_away_mode.state = 1 and door.state = 1 then text.state = 1', 'safety'), 
+('if user_away_mode.state = 1 and heater.state = 1 then text.state = 1', 'safety'), 
+('if user_away_mode.state = 1 and ac.state = 1 then text.state = 1', 'safety'), 
+('if user_away_mode.state = 1 and light.state = 1 then text.state = 1', 'safety'), 
+('if user_away_mode.state = 1 and windows.state = 1 then text.state = 1', 'safety'), 
+
+('if user_away_mode.state = 1 then electric_devices.state = 0', 'energy'), 
+('if energy_saving.state = 1 then electric_devices.state = 0', 'energy'),  ##  away mode ---> light == 0   /   saving mode	--->  ?
+
+('if dangerous_detection.state = 1 then speaker.state = 1', 'safety'), Y    relation?
+('if fire.state = 1 then speaker.state = 1', 'safety'),  Y    relation
+('if fire.state = 1 then text.state = 1', 'safety'), 	Y    relation
+
+('if user.home = 0 then windows.state = 0', 'safety'), 	Y   windows in home?
+('if user.sleep = 1 then windows.state = 0', 'safety'), 
+	
+('if ac.state = 1 then windows.state = 0', 'energy'), 	Y   included
+('if weather.rain = 1 then windows.state = 0', 'safety'), 	Y  # common sense   relation? all the windows? or the windows connecting outside
+
+('if energy.cost >= 10000 then high_power.state = 1', 'energy'), 	
+('if energy.cost >= 20000 then high_power.state = 1', 'safety'), 
+('if high_power.state = 1 then ac.state = 0', 'energy'),   Y   relation?
+('if high_power.state = 1 then heater.state = 0', 'energy'),	Y   relation?
+ 
+('if user.home = 0 then ac.state = 0', 'energy'), 
+('if user.home = 0 then heater.state = 1', 'energy'), 
+
+('if season.winter = 1 then heater.state = 1', 'safety'), 	
+('if smoke.state = 1 then fan.state = 1', 'safety'), 	Y    smoke detector and fan in the same room?
+
+('if co2.state = 1 then fireplace.state = 0', 'safety'), 	Y     co2 detector and fireplace in the same room?
+('if co2.state = 1 then door.state = 1', 'safety'), 		Y    co2 detector and door(which door)
+
+co2 rain temperature
+min1 5% co2 20% rain
+min2 
+
+('if user.home = 0 then door.state = 0', 'safety'), 	Y   which door  doors in home?
+('if user.shower = 1 then curtain.state = 0', 'safety'), 		
+('if user.home = 0 then camera.state = 1', 'safety'), 
+('if user.home = 1 then camera.state = 0', 'safety'), 
+('if user.shower = 1 then camera.state = 0', 'safety'), 
+('if user.sleep = 1 then camera.state = 0', 'safety'), 
+('if motion.state = 1 then camera.state = 1', 'safety'), 
+	
+('if user.home = 0 and time.value >= 1000 then low__power.state = 1', 'energy')]	Y		
+relation: turn up double check

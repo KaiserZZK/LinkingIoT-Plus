@@ -1,0 +1,30 @@
+{
+  "@context": "https://www.w3.org/2022/wot/td/v1.1",
+  "id": "urn:dev:wot:com:jason_loc",
+  "title": "jason_loc",
+  "type": "brick1:Person_Location_Sensor",
+  "securityDefinitions": {
+    "basic_sc": {
+      "scheme": "basic",
+      "in": "header"
+    },
+    "nosec_sc": {
+      "scheme": "nosec"
+    }
+  },
+  "security": "nosec_sc",
+  "properties": {
+    "person_location": {
+      "default": "",
+      "type": "string",
+      "title": "person_location"
+    }
+  },
+  "links": [
+    {
+      "href": "brick_setup",
+      "rel": "belongsTo",
+      "mediaType": "application/td"
+    }
+  ]
+}

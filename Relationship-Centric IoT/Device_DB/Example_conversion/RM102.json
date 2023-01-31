@@ -1,0 +1,38 @@
+{
+  "@context": "https://www.w3.org/2022/wot/td/v1.1",
+  "id": "urn:dev:wot:com:RM102",
+  "title": "RM102",
+  "type": "brick1:HVAC_Zone",
+  "securityDefinitions": {
+    "basic_sc": {
+      "scheme": "basic",
+      "in": "header"
+    },
+    "nosec_sc": {
+      "scheme": "nosec"
+    }
+  },
+  "security": "nosec_sc",
+  "links": [
+    {
+      "href": "brick_setup",
+      "rel": "belongsTo",
+      "mediaType": "application/td"
+    },
+    {
+      "href": "urn:dev:wot:com:FL1",
+      "rel": "brick1:isPartOf",
+      "mediaType": "application/td"
+    },
+    {
+      "href": "urn:dev:wot:com:BLDG_RM102_ZN_T",
+      "rel": "brick1:hasPoint",
+      "mediaType": "application/td"
+    },
+    {
+      "href": "urn:dev:wot:com:BLDG_RM102_ZN_T",
+      "rel": "brick1:isLocationOf",
+      "mediaType": "application/td"
+    }
+  ]
+}

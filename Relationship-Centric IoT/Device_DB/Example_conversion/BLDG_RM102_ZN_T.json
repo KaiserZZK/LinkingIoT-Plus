@@ -1,0 +1,32 @@
+{
+  "@context": "https://www.w3.org/2022/wot/td/v1.1",
+  "id": "urn:dev:wot:com:BLDG_RM102_ZN_T",
+  "title": "BLDG_RM102_ZN_T",
+  "type": "brick1:Zone_Air_Temperature_Sensor",
+  "securityDefinitions": {
+    "basic_sc": {
+      "scheme": "basic",
+      "in": "header"
+    },
+    "nosec_sc": {
+      "scheme": "nosec"
+    }
+  },
+  "security": "nosec_sc",
+  "properties": {
+    "temperature": {
+      "default": 30,
+      "minimum": 10,
+      "maximum": 120,
+      "type": "integer",
+      "title": "temperature"
+    }
+  },
+  "links": [
+    {
+      "href": "brick_setup",
+      "rel": "belongsTo",
+      "mediaType": "application/td"
+    }
+  ]
+}
