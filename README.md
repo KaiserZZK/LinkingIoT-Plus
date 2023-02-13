@@ -1,4 +1,4 @@
-# Linking IoT (Spring 22)
+# Linking IoT (Spring 23)
 
 This project is to represent IoT objects in graph-based database, analyze the linkages between devices, and alert users when potential there is a potential conflit in a command before it is being excuted. 
 
